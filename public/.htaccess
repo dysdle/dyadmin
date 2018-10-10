@@ -6,3 +6,10 @@
   RewriteCond %{REQUEST_FILENAME} !-f
   RewriteRule ^(.*)$ index.php?/$1 [QSA,PT,L]
 </IfModule>
+
+ErrorDocument 404 /notfound.html
+ErrorDocument 500 /error.html
+AuthName "myadmin"
+AuthType Basic
+AuthUserFile /.htpasswd
+require valid-user
